@@ -9,7 +9,7 @@ function Contact() {
                     <p className="text-center mb-5">N'hésitez pas à me contacter pour toute question, projet ou collaboration !</p>
                     <div className="row justify-content-center">
                         <div className="col-md-8 col-lg-6">
-                            <form action="https://wa.me/ton_numero_whatsapp?text=Bonjour,%20je%20souhaite%20entrer%20en%20contact%20avec%20vous.%20Voici%20mes%20informations:%20" method="get" target="_blank">
+                            <form action="https://wa.me/message/ALVHMML7F2H6L1" method="get" target="_blank">
                                 <div className="mb-3">
                                     <label htmlFor="name" className="form-label">Nom</label>
                                     <input type="text" className="form-control" id="name" name="name" placeholder="Votre nom" required/>
