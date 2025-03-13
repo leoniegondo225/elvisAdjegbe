@@ -1,5 +1,6 @@
 "use client"
 
+import Commentaire from "@/component/commentaire";
 import Competence from "@/component/competence";
 import Contact from "@/component/contact";
 import Creation from "@/component/creation";
@@ -15,6 +16,7 @@ import NavBar from "@/component/Navbar";
       <Hero/>
       <Competence/>
       <Creation/>
+      <Commentaire/>
       <Contact/>
       <Footer/>
     </div>
