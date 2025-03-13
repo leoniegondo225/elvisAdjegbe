@@ -8,7 +8,7 @@ function Page() {
     return (
         <>
             <NavBar />
-            <div className="container mb-5">
+            <div className="container mb-5" data-aos="fade-up" data-aos-delay="200">
                 <div className="row align-item-center justify-content-center">
                     <div className="col-md-6">
                         

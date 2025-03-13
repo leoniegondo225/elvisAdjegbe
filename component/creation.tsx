@@ -8,7 +8,7 @@ import Link from "next/link"
 function Creation() {
     return (
         <>
-<div className="py-5 bg-light" id="mes creations">
+<div className="py-5 bg-light" id="mes creations" data-aos="fade-up" data-aos-delay="200">
     <div className="container">
         <h2 className="fw-bold text-center mb-5">Mes <span className="texte-rose">Mes créations</span></h2>
         

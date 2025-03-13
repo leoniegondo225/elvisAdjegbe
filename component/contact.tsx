@@ -3,7 +3,7 @@
 function Contact() {
     return (
         <>
-            <section id="contact" className="py-5 bg-light">
+            <section id="contact" className="py-5 bg-light" data-aos="fade-up" data-aos-delay="200">
                 <div className="container">
                     <h2 className="text-center fw-bold mb-4">Contactez-moi</h2>
                     <p className="text-center mb-5">N'hésitez pas à me contacter pour toute question, projet ou collaboration !</p>

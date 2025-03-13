@@ -6,7 +6,7 @@ import { FaCheckCircle } from "react-icons/fa"
 function Hero() {
     return (
         <>
-            <div className="container mb-5">
+            <div className="container mb-5" data-aos="fade-up" data-aos-delay="200">
                 <div className="row pt-5 align-item-center">
                     <div className="col-lg-6 mb-4">
                     <h1 className="fw-bold taille mb-4"> Hello je suis <span className="texte-vert">ELVIS ADJEGBE</span>
