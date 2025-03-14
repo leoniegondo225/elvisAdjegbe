@@ -14,7 +14,7 @@ function About() {
         <NavBar/>
         <div className="container">
         <div className="mb-5"> 
-           <img src="img/hero1.jpg" alt="photo elvis" className="img-fluid" /> 
+           <img src="img/about.jpg" alt="photo elvis" className="img-fluid" /> 
         </div>
         <div className="container">
             <h1 className="fw-bold text-center">A propos de moi</h1>
