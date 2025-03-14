@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import Link from "next/link";
 
@@ -19,12 +19,12 @@ function Creation() {
           <div className="row">
             {/* Montage Vidéo */}
             <Link href="/montagevideo" className="col-lg-4 mb-4 text-decoration-none">
-              <div className="card shadow-lg border-0 h-100 d-flex flex-column">
-                <img src="/img/v.jpg" className="card-img-top fixed-img" alt="Montage Vidéo" />
+              <div className="card shadow-lg border-0 h-100 d-flex flex-column hover-effect">
+                <img src="/img/v.jpg" className="card-img-top fixed-img img-hover" alt="Montage Vidéo" />
                 <div className="card-body text-center d-flex flex-column flex-grow-1">
                   <h5 className="card-title fw-bold">Vidéographe</h5>
                   <p className="text-secondary flex-grow-1">
-                  Réalisation de vidéos captivantes avec un montage fluide, des effets visuels percutants et des animations dynamiques. Maîtrise de Premiere Pro, After Effects et DaVinci Resolve pour un rendu professionnel et immersif.
+                    Réalisation de vidéos captivantes avec un montage fluide, des effets visuels percutants et des animations dynamiques.
                   </p>
                 </div>
               </div>
@@ -32,12 +32,12 @@ function Creation() {
 
             {/* Montage Vidéo */}
             <Link href="/montagevideo" className="col-lg-4 mb-4 text-decoration-none">
-              <div className="card shadow-lg border-0 h-100 d-flex flex-column">
-                <img src="/img/hero2.jpg" className="card-img-top fixed-img" alt="Montage Vidéo" />
+              <div className="card shadow-lg border-0 h-100 d-flex flex-column hover-effect">
+                <img src="/img/hero2.jpg" className="card-img-top fixed-img img-hover" alt="Montage Vidéo" />
                 <div className="card-body text-center d-flex flex-column flex-grow-1">
                   <h5 className="card-title fw-bold">Montage Vidéo</h5>
                   <p className="text-secondary flex-grow-1">
-                    Création de vidéos dynamiques avec effets spéciaux et animations. Utilisation de Premiere Pro et After Effects.
+                    Création de vidéos dynamiques avec effets spéciaux et animations.
                   </p>
                 </div>
               </div>
@@ -45,8 +45,8 @@ function Creation() {
 
             {/* Infographie */}
             <Link href="/affiche" className="col-lg-4 mb-4 text-decoration-none">
-              <div className="card shadow-lg border-0 h-100 d-flex flex-column">
-                <img src="/img/i.avif" className="card-img-top fixed-img" alt="Infographie" />
+              <div className="card shadow-lg border-0 h-100 d-flex flex-column hover-effect">
+                <img src="/img/i.avif" className="card-img-top fixed-img img-hover" alt="Infographie" />
                 <div className="card-body text-center d-flex flex-column flex-grow-1">
                   <h5 className="card-title fw-bold">Infographie</h5>
                   <p className="text-secondary flex-grow-1">
@@ -58,8 +58,8 @@ function Creation() {
 
             {/* Photographie */}
             <Link href="/image" className="col-lg-4 mb-4 text-decoration-none">
-              <div className="card shadow-lg border-0 h-100 d-flex flex-column">
-                <img src="/img/hero3.jpg" className="card-img-top fixed-img" alt="Photographie" />
+              <div className="card shadow-lg border-0 h-100 d-flex flex-column hover-effect">
+                <img src="/img/hero3.jpg" className="card-img-top fixed-img img-hover" alt="Photographie" />
                 <div className="card-body text-center d-flex flex-column flex-grow-1">
                   <h5 className="card-title fw-bold">Photographie</h5>
                   <p className="text-secondary flex-grow-1">
@@ -71,8 +71,8 @@ function Creation() {
 
             {/* Cadrage */}
             <Link href="#" className="col-lg-4 mb-4 text-decoration-none">
-              <div className="card shadow-lg border-0 h-100 d-flex flex-column">
-                <img src="/img/c.avif" className="card-img-top fixed-img" alt="Cadrage" />
+              <div className="card shadow-lg border-0 h-100 d-flex flex-column hover-effect">
+                <img src="/img/c.avif" className="card-img-top fixed-img img-hover" alt="Cadrage" />
                 <div className="card-body text-center d-flex flex-column flex-grow-1">
                   <h5 className="card-title fw-bold">Cadrage</h5>
                   <p className="text-secondary flex-grow-1">
@@ -84,8 +84,8 @@ function Creation() {
 
             {/* Design Graphique */}
             <Link href="#" className="col-lg-4 mb-4 text-decoration-none">
-              <div className="card shadow border-0 h-100 d-flex flex-column">
-                <img src="/img/gé.avif" className="card-img-top fixed-img" alt="Design Graphique" />
+              <div className="card shadow border-0 h-100 d-flex flex-column hover-effect">
+                <img src="/img/gé.avif" className="card-img-top fixed-img img-hover" alt="Design Graphique" />
                 <div className="card-body text-center d-flex flex-column flex-grow-1">
                   <h5 className="card-title fw-bold">Design Graphique</h5>
                   <p className="text-secondary flex-grow-1">
@@ -98,12 +98,32 @@ function Creation() {
         </div>
       </div>
 
-      {/* Styles CSS pour les images */}
+      {/* Styles CSS pour les images et les effets */}
       <style jsx>{`
         .fixed-img {
           height: 200px; /* Ajuste la hauteur */
           object-fit: cover; /* Coupe et ajuste l'image sans déformation */
           width: 100%; /* Prend toute la largeur */
+        }
+
+        /* Effet de survol pour les cartes */
+        .hover-effect {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-effect:hover {
+          transform: scale(1.05); /* Zoom léger de la carte */
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
+        }
+
+        /* Effet de survol sur l'image */
+        .img-hover {
+          transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .img-hover:hover {
+          transform: scale(1.1); /* Zoom sur l'image */
+          filter: brightness(0.7); /* Assombrir l'image */
         }
       `}</style>
     </>

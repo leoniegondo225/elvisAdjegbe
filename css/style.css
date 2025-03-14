@@ -3,8 +3,8 @@
 }
 
 .texte-vert{
-    color: aqua;
-    border-bottom: 3px solid aqua ;
+    color: rgb(112, 79, 16);
+    border-bottom: 3px solid rgb(112, 79, 16) ;
 }
 
 section#contact {
@@ -53,6 +53,39 @@ section#contact {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
+/* Styles pour l'effet de survol */
+.hover-effect {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: scale(1.05); /* Zoom léger de l'image */
+
+}
+
+
+/* Styles pour l'effet de survol sur les cartes et icônes */
+.hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: scale(1.05); /* Zoom léger de la carte */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Légère ombre portée sur la carte */
+}
+
+.icon-hover {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.icon-hover:hover {
+  transform: scale(1.1); /* Zoom sur l'icône */
+  filter: brightness(0.8); /* Assombrir l'icône au survol */
+}
+
+
 
 /* Cacher l'image de fond sur les écrans de moins de 768px (mobile) */
 @media (max-width: 768px) {
