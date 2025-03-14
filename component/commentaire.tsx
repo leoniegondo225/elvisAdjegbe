@@ -6,17 +6,17 @@ const Commentaire = () => {
     {
       name: "Emmanuel N'guessan",
       text: "Un service impeccable ! Je suis ravi du travail effectué. Très professionnel et à l'écoute.",
-      image: "/img/c1.jpg"
+      image: "/img/c3.jpg"
     },
     {
       name: "Dina la Blonde Officielle",
       text: "Mon photographe👍. Merci beaucoup pour les travaux de la dernière fois. Nous sommes tellement satisfaits.",
-      image: "/img/c2.jpg"
+      image: "/img/c1.jpg"
     },
     {
       name: "HK Event & Pro",
       text: "Rendez-vous à la deuxième édition du festival Prise de Vues. Nous avons adoré la dernière fois👌.",
-      image: "/img/c3.jpg"
+      image: "/img/c2.jpg"
     },
     {
       name: "Christ Josué",
