@@ -42,7 +42,7 @@ function Creation() {
             {/* Photographie */}
             <Link href="/image" className="col-lg-4 mb-4 text-decoration-none">
                 <div className="card shadow-lg border-0">
-                     <img src="/img/p2.avif" className="card-img-top" alt="Photographie" />
+                     <img src="/img/hero3.jpg" className="card-img-top" alt="Photographie" />
                     <div className="card-body text-center">
                         <h5 className="card-title fw-bold">Photographie</h5>
                         <p className="text-secondary">

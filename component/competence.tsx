@@ -10,7 +10,7 @@ function Competence() {
     return (
         <>
 
-<div className="mb-5" id="competence" data-aos="fade-up" data-aos-delay="200">
+<div className="mb-5 hero1" id="competence" data-aos="fade-up" data-aos-delay="200">
         <div className="container text-center">
         <h2 className="fw-bold text-center mb-4">Mes <span className="texte-rose">Compétences</span></h2>
             <div className="row text-center justify-content-center">

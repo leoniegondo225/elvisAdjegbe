@@ -14,7 +14,7 @@ function NavBar() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
                         <Nav.Link href="/" className="fw-bold">Accueil</Nav.Link>
-                        <Nav.Link href="#" className="fw-bold">A propos</Nav.Link>
+                        <Nav.Link href="/about" className="fw-bold">A propos</Nav.Link>
                         <Nav.Link href="#mes creation" className="fw-bold">mes création</Nav.Link>
                         <Nav.Link href="#competence" className="fw-bold">Competence</Nav.Link>
                         <Nav.Link href="#contact" className="fw-bold">Contact</Nav.Link>

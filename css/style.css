@@ -38,3 +38,26 @@ section#contact {
   button[type="submit"]:hover {
     background-color: #128C7E;
   }  
+
+
+  
+
+
+.hero1 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url(/img/hero3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Cacher l'image de fond sur les écrans de moins de 768px (mobile) */
+@media (max-width: 768px) {
+  .hero1 {
+    background: none; /* Supprime l'image de fond */
+    
+  }
+}
