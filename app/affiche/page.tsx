@@ -72,6 +72,48 @@ function Page() {
                             className="img-fluid shadow-lg rounded hover-effect" 
                         />
                     </div>
+                    <div className="col-md-4 mb-4">
+                        <img 
+                            src="/img/1.jpg" 
+                            alt="Image 10" 
+                            className="img-fluid shadow-lg rounded hover-effect" 
+                        />
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <img 
+                            src="/img/2.jpg" 
+                            alt="Image 11" 
+                            className="img-fluid shadow-lg rounded hover-effect" 
+                        />
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <img 
+                            src="/img/3.jpg" 
+                            alt="Image 12" 
+                            className="img-fluid shadow-lg rounded hover-effect" 
+                        />
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <img 
+                            src="/img/4.jpg" 
+                            alt="Image 13" 
+                            className="img-fluid shadow-lg rounded hover-effect" 
+                        />
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <img 
+                            src="/img/5.jpg" 
+                            alt="Image 14" 
+                            className="img-fluid shadow-lg rounded hover-effect" 
+                        />
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <img 
+                            src="/img/6.jpg" 
+                            alt="Image 15" 
+                            className="img-fluid shadow-lg rounded hover-effect" 
+                        />
+                    </div>
                 </div>
             </div>
             <Footer />
