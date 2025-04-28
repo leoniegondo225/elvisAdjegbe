@@ -32,6 +32,15 @@ function Page() {
                     </div>
                     <div className="col-md-4 mb-4">
                         <img src="/img/im8.jpg" alt="Artwork 8" className="img-fluid shadow-lg rounded" />
+                    </div> 
+                    <div className="col-md-4 mb-4">
+                        <img src="/img/im9.jpg" alt="Artwork 8" className="img-fluid shadow-lg rounded" />
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <img src="/img/im10.jpg" alt="Artwork 8" className="img-fluid shadow-lg rounded" />
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <img src="/img/im11.jpg" alt="Artwork 8" className="img-fluid shadow-lg rounded" />
                     </div>
                 </div>
             </div>
