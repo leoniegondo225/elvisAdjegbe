@@ -42,6 +42,30 @@ function Page() {
                     <div className="col-md-4 mb-4">
                         <img src="/img/im11.jpg" alt="Artwork 8" className="img-fluid shadow-lg rounded" />
                     </div>
+                    <div className="col-md-4 mb-4">
+                        <img src="/img/im12.jpg" alt="Artwork 8" className="img-fluid shadow-lg rounded" />
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <img src="/img/im13.jpg" alt="Artwork 8" className="img-fluid shadow-lg rounded" />
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <img src="/img/im14.jpg" alt="Artwork 8" className="img-fluid shadow-lg rounded" />
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <img src="/img/im15.jpg" alt="Artwork 8" className="img-fluid shadow-lg rounded" />
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <img src="/img/im16.jpg" alt="Artwork 8" className="img-fluid shadow-lg rounded" />
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <img src="/img/im17.jpg" alt="Artwork 8" className="img-fluid shadow-lg rounded" />
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <img src="/img/im18.jpg" alt="Artwork 8" className="img-fluid shadow-lg rounded" />
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <img src="/img/im19.jpg" alt="Artwork 8" className="img-fluid shadow-lg rounded" />
+                    </div>
                 </div>
             </div>
             <Footer />
