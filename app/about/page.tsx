@@ -4,10 +4,6 @@ import Footer from "@/component/footer"
 import NavBar from "@/component/Navbar"
 
 
-
-
-
-
 function About() {
     return (
         <>

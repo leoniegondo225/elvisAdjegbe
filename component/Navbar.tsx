@@ -19,7 +19,7 @@ function NavBar() {
                         <Nav.Link href="#competence" className="fw-bold">Competence</Nav.Link>
                         <Nav.Link href="#contact" className="fw-bold">Contact</Nav.Link>
                     </Nav>
-                    <Nav.Link href="/img/ElvisCV.pdf" className="btn  vert text-dark  p-2 m-2 ">Voir Mon CV</Nav.Link>
+                    <Nav.Link href="/img/CvElvis.pdf" className="btn  vert text-dark  p-2 m-2 ">Voir Mon CV</Nav.Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
