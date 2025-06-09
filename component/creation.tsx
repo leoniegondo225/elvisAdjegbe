@@ -70,7 +70,7 @@ function Creation() {
             </Link>
 
             {/* Cadrage */}
-            <Link href="#" className="col-lg-4 mb-4 text-decoration-none">
+            <Link href="cadrage" className="col-lg-4 mb-4 text-decoration-none">
               <div className="card shadow-lg border-0 h-100 d-flex flex-column hover-effect">
                 <img src="/img/c.avif" className="card-img-top fixed-img img-hover" alt="Cadrage" />
                 <div className="card-body text-center d-flex flex-column flex-grow-1">
