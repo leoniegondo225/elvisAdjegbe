@@ -1,132 +1,52 @@
-'use client'
+"use client"
+// Créations — galerie traduite
 
 import Link from "next/link";
+import { useContexte } from "@/context/ThemeContext";
+import { t, traduire } from "@/context/traductions";
 
 function Creation() {
+  const { langue } = useContexte();
+
+  const creations = [
+    { id: 1, href: "/montagevideo", image: "/img/v.jpg",     cat: "Vidéographie / Videography", nom: { fr: "Vidéographe", en: "Videographer" },      tag: "Vidéo" },
+    { id: 2, href: "/montagevideo", image: "/img/hero2.jpg", cat: "Post-production",             nom: { fr: "Montage Vidéo", en: "Video Editing" },     tag: "Montage" },
+    { id: 3, href: "/affiche",      image: "/img/i.avif",    cat: "Design Graphique / Graphic",  nom: { fr: "Infographie", en: "Infographics" },         tag: "Design" },
+    { id: 4, href: "/image",        image: "/img/hero3.jpg", cat: "Photo",                       nom: { fr: "Photographie", en: "Photography" },        tag: "Photo" },
+    { id: 5, href: "/cadrage",      image: "/img/c.avif",    cat: "Technique / Technical",       nom: { fr: "Cadrage", en: "Framing" },                 tag: "Cadrage" },
+    { id: 6, href: "#",             image: "/img/g.avif",    cat: "Branding",                    nom: { fr: "Design Graphique", en: "Graphic Design" }, tag: "Branding" },
+  ];
+
   return (
-    <>
-      <div
-        className="py-5 bg-light"
-        id="mes creations"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-        <div className="container">
-          <h2 className="fw-bold text-center mb-5">
-            Mes <span className="texte-rose">Créations</span>
+    <section className="section" id="creations">
+      <div className="container-max">
+
+        <div className="section-entete" data-aos="fade-up">
+          <div className="section-label">{traduire(t.creat_label, langue)}</div>
+          <h2 className="section-titre">
+            {traduire(t.creat_titre, langue)} <em>{traduire(t.creat_titre_em, langue)}</em>
           </h2>
-
-          <div className="row">
-            {/* Montage Vidéo */}
-            <Link href="/montagevideo" className="col-lg-4 mb-4 text-decoration-none">
-              <div className="card shadow-lg border-0 h-100 d-flex flex-column hover-effect">
-                <img src="/img/v.jpg" className="card-img-top fixed-img img-hover" alt="Montage Vidéo" />
-                <div className="card-body text-center d-flex flex-column flex-grow-1">
-                  <h5 className="card-title fw-bold">Vidéographe</h5>
-                  <p className="text-secondary flex-grow-1">
-                    Réalisation de vidéos captivantes avec un montage fluide, des effets visuels percutants et des animations dynamiques.
-                  </p>
-                </div>
-              </div>
-            </Link>
-
-            {/* Montage Vidéo */}
-            <Link href="/montagevideo" className="col-lg-4 mb-4 text-decoration-none">
-              <div className="card shadow-lg border-0 h-100 d-flex flex-column hover-effect">
-                <img src="/img/hero2.jpg" className="card-img-top fixed-img img-hover" alt="Montage Vidéo" />
-                <div className="card-body text-center d-flex flex-column flex-grow-1">
-                  <h5 className="card-title fw-bold">Montage Vidéo</h5>
-                  <p className="text-secondary flex-grow-1">
-                    Création de vidéos dynamiques avec effets spéciaux et animations.
-                  </p>
-                </div>
-              </div>
-            </Link>
-
-            {/* Infographie */}
-            <Link href="/affiche" className="col-lg-4 mb-4 text-decoration-none">
-              <div className="card shadow-lg border-0 h-100 d-flex flex-column hover-effect">
-                <img src="/img/i.avif" className="card-img-top fixed-img img-hover" alt="Infographie" />
-                <div className="card-body text-center d-flex flex-column flex-grow-1">
-                  <h5 className="card-title fw-bold">Infographie</h5>
-                  <p className="text-secondary flex-grow-1">
-                    Création de visuels impactants : affiches, logos, flyers et bannières en utilisant Photoshop et Illustrator.
-                  </p>
-                </div>
-              </div>
-            </Link>
-
-            {/* Photographie */}
-            <Link href="/image" className="col-lg-4 mb-4 text-decoration-none">
-              <div className="card shadow-lg border-0 h-100 d-flex flex-column hover-effect">
-                <img src="/img/hero3.jpg" className="card-img-top fixed-img img-hover" alt="Photographie" />
-                <div className="card-body text-center d-flex flex-column flex-grow-1">
-                  <h5 className="card-title fw-bold">Photographie</h5>
-                  <p className="text-secondary flex-grow-1">
-                    Shooting professionnel, retouches avancées et correction colorimétrique avec Lightroom et Photoshop.
-                  </p>
-                </div>
-              </div>
-            </Link>
-
-            {/* Cadrage */}
-            <Link href="cadrage" className="col-lg-4 mb-4 text-decoration-none">
-              <div className="card shadow-lg border-0 h-100 d-flex flex-column hover-effect">
-                <img src="/img/c.avif" className="card-img-top fixed-img img-hover" alt="Cadrage" />
-                <div className="card-body text-center d-flex flex-column flex-grow-1">
-                  <h5 className="card-title fw-bold">Cadrage</h5>
-                  <p className="text-secondary flex-grow-1">
-                    Maîtrise des plans et angles de prise de vue pour des vidéos et photos de haute qualité.
-                  </p>
-                </div>
-              </div>
-            </Link>
-
-            {/* Design Graphique */}
-            <Link href="#" className="col-lg-4 mb-4 text-decoration-none">
-              <div className="card shadow border-0 h-100 d-flex flex-column hover-effect">
-                <img src="/img/gé.avif" className="card-img-top fixed-img img-hover" alt="Design Graphique" />
-                <div className="card-body text-center d-flex flex-column flex-grow-1">
-                  <h5 className="card-title fw-bold">Design Graphique</h5>
-                  <p className="text-secondary flex-grow-1">
-                    Conception de designs modernes et attractifs pour les marques et entreprises.
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </div>
+          <p className="section-desc">{traduire(t.creat_desc, langue)}</p>
         </div>
+
+        <div className="creations-grille" data-aos="fade-up" data-aos-delay="150">
+          {creations.map((item) => (
+            <Link key={item.id} href={item.href} className="creation-item" style={{ textDecoration: "none" }}>
+              <span className="creation-tag">{item.tag}</span>
+              <img src={item.image} alt={item.nom.fr} className="creation-img" />
+              <div className="creation-overlay">
+                <span className="creation-cat">{item.cat}</span>
+                <h3 className="creation-nom">{langue === "fr" ? item.nom.fr : item.nom.en}</h3>
+                <span className="creation-lien">
+                  {traduire(t.creat_voir, langue)} <span>→</span>
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+
       </div>
-
-      {/* Styles CSS pour les images et les effets */}
-      <style jsx>{`
-        .fixed-img {
-          height: 200px; /* Ajuste la hauteur */
-          object-fit: cover; /* Coupe et ajuste l'image sans déformation */
-          width: 100%; /* Prend toute la largeur */
-        }
-
-        /* Effet de survol pour les cartes */
-        .hover-effect {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .hover-effect:hover {
-          transform: scale(1.05); /* Zoom léger de la carte */
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
-        }
-
-        /* Effet de survol sur l'image */
-        .img-hover {
-          transition: transform 0.3s ease, filter 0.3s ease;
-        }
-
-        .img-hover:hover {
-          transform: scale(1.1); /* Zoom sur l'image */
-          filter: brightness(0.7); /* Assombrir l'image */
-        }
-      `}</style>
-    </>
+    </section>
   );
 }
 

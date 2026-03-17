@@ -1,67 +1,89 @@
-'use client'
+"use client"
+// Compétences — textes traduits
 
-import { FaClock, FaPalette, FaVideo } from "react-icons/fa"
-import { MdAddAPhoto } from "react-icons/md"
+import { useContexte } from "@/context/ThemeContext";
+import { t, traduire } from "@/context/traductions";
 
 function Competence() {
-    return (
-        <>
-            <div className="mb-5 " id="competence" data-aos="fade-up" data-aos-delay="200">
-                <div className="container text-center">
-                    <h2 className="fw-bold text-center mb-4">Mes <span className="texte-rose">Compétences</span></h2>
-                    <div className="row text-center justify-content-center">
-                        <div className="col-sm-3 mb-3 mb-sm-0 ">
-                            <div className="card shadow h-100 d-flex flex-column hover-effect">
-                                <div className="card-body d-flex flex-column">
-                                    <MdAddAPhoto className="fs-2 text-info mb-3 icon-hover" />
-                                    <h5 className="card-text fw-bold">Photographie et Cadrage</h5>
-                                    <p className="text-secondary flex-grow-1">
-                                        Maîtrise du cadrage, prise de vue professionnelle, retouches avancées et colorimétrie pour sublimer vos images avec Adobe Lightroom et Photoshop.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+  const { langue } = useContexte();
 
-                        <div className="col-sm-3 mb-3 mb-sm-0">
-                            <div className="card shadow h-100 d-flex flex-column hover-effect">
-                                <div className="card-body d-flex flex-column">
-                                    <FaVideo className="fs-2 text-primary mb-5 icon-hover" />
-                                    <h5 className="card-text fw-bold">Montage Vidéo</h5>
-                                    <p className="text-secondary flex-grow-1">
-                                        Montage dynamique, effets spéciaux et animations avec Premiere Pro, After Effects et DaVinci Resolve pour des vidéos impactantes.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+  // Données des compétences avec clés de traduction
+  const competences = [
+    {
+      numero: "01",
+      icone: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
+          <circle cx="12" cy="13" r="4"/>
+        </svg>
+      ),
+      nom: t.comp_1_nom,
+      texte: t.comp_1_txt,
+    },
+    {
+      numero: "02",
+      icone: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <polygon points="23 7 16 12 23 17 23 7"/>
+          <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+        </svg>
+      ),
+      nom: t.comp_2_nom,
+      texte: t.comp_2_txt,
+    },
+    {
+      numero: "03",
+      icone: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+          <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+          <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+          <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 011.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+        </svg>
+      ),
+      nom: t.comp_3_nom,
+      texte: t.comp_3_txt,
+    },
+    {
+      numero: "04",
+      icone: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+      ),
+      nom: t.comp_4_nom,
+      texte: t.comp_4_txt,
+    },
+  ];
 
-                        <div className="col-sm-3 mb-3 mb-sm-0">
-                            <div className="card shadow h-100 d-flex flex-column hover-effect">
-                                <div className="card-body d-flex flex-column">
-                                    <FaPalette className="fs-2 text-warning mb-5 icon-hover" />
-                                    <h5 className="card-text fw-bold">Infographie & Design</h5>
-                                    <p className="text-secondary flex-grow-1">
-                                        Création de visuels percutants, logos, affiches et supports marketing en utilisant Adobe Photoshop, Illustrator et InDesign.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+  return (
+    <section className="section section-alt" id="competences">
+      <div className="container-max">
 
-                        <div className="col-sm-3 mb-3 mb-sm-0">
-                            <div className="card shadow h-100 d-flex flex-column hover-effect">
-                                <div className="card-body d-flex flex-column">
-                                    <FaClock className="fs-2 text-success mb-5 icon-hover" />
-                                    <h5 className="card-text fw-bold">Disponibilité 24h/24</h5>
-                                    <p className="text-secondary flex-grow-1">
-                                        Flexibilité et réactivité pour répondre à vos besoins en création graphique, photo et vidéo à tout moment.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div className="section-entete" data-aos="fade-up">
+          <div className="section-label">{traduire(t.comp_label, langue)}</div>
+          <h2 className="section-titre">
+            {traduire(t.comp_titre, langue)} <em>{traduire(t.comp_titre_em, langue)}</em>
+          </h2>
+          <p className="section-desc">{traduire(t.comp_desc, langue)}</p>
+        </div>
+
+        <div className="competences-grille" data-aos="fade-up" data-aos-delay="200">
+          {competences.map((comp) => (
+            <div className="comp-carte" key={comp.numero}>
+              <span className="comp-numero">{comp.numero}</span>
+              <div className="comp-icone">{comp.icone}</div>
+              <h3 className="comp-nom">{traduire(comp.nom, langue)}</h3>
+              <p className="comp-texte">{traduire(comp.texte, langue)}</p>
             </div>
-        </>
-    )
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
 }
 
 export default Competence;

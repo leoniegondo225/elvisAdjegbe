@@ -1,32 +1,123 @@
 "use client"
+// Page À propos — bilingue FR/EN
 
-import Footer from "@/component/footer"
-import NavBar from "@/component/Navbar"
+import NavBar from "@/component/Navbar";
+import Footer from "@/component/footer";
+import { useContexte } from "@/context/ThemeContext";
+import { t, traduire } from "@/context/traductions";
 
+const outils = [
+  { nom: "Adobe Photoshop", niveau: 95 },
+  { nom: "Adobe Premiere Pro", niveau: 90 },
+  { nom: "After Effects", niveau: 85 },
+  { nom: "Adobe Illustrator", niveau: 88 },
+  { nom: "DaVinci Resolve", niveau: 80 },
+  { nom: "Adobe Lightroom", niveau: 92 },
+  { nom: "Adobe InDesign", niveau: 78 },
+  { nom: "Capture One", niveau: 75 },
+];
 
-function About() {
-    return (
-        <>
-            <NavBar />
-            <div className="container">
-                <div className="mb-5">
-                    <img src="img/about.jpg" alt="photo de elvis " className="img-fluid" />
-                </div>
-                <div className="container">
-                    <h1 className="fw-bold text-center">Je suis Elvis C. N'guessan ADJEGBE</h1>
-                    <p className="pt-4">Passionné par l’infographie, la photographie, le cadrage et le montage vidéo, j’exprime ma créativité à travers l’image et la composition visuelle. Mon objectif ? Capturer l’instant parfait, raconter des histoires puissantes et donner vie aux idées grâce à des visuels percutants et professionnels.</p>
-                    <p className="pt-4">Toujours en quête d’innovation, j’explore en permanence de nouvelles techniques et outils pour optimiser mon travail et offrir des productions visuelles de haute qualité. Mon approche allie précision, sens artistique et maîtrise des technologies modernes, me permettant ainsi de répondre aux attentes les plus exigeantes.</p>
-                    <p className="pt-4">En plus de mes compétences techniques, je me distingue par ma rigueur, mon sens du détail et ma capacité à m’adapter aux besoins spécifiques de chaque projet. Qu’il s’agisse de photographie de portrait, de retouche avancée, de motion design ou de montage vidéo dynamique, je mets tout en œuvre pour sublimer chaque création et offrir une expérience visuelle captivante.</p>
-                    <h3 className="fw-bold pt-4">🎬 Centres d'intérêt</h3>
-                    <p className="pt-3">En dehors de mon travail, je suis fasciné par l’évolution des technologies créatives et l’intelligence artificielle appliquée aux arts visuels. J’aime expérimenter de nouvelles approches graphiques, tester des logiciels de pointe et me former continuellement pour enrichir mon savoir-faire. La musique et le cinéma sont également des sources d’inspiration majeures dans mon processus créatif.
+export default function About() {
+  const { langue } = useContexte();
+  console.log("👤 Page À propos chargée — langue :", langue);
 
-                    </p>
-                    <h3 className="fw-bold pt-6">🚀 Objectif </h3>
-                    <p className="pt-4">Mon ambition est de continuer à évoluer dans le domaine de la création visuelle, en explorant sans cesse de nouvelles techniques et en collaborant sur des projets innovants. Curieux, passionné et méticuleux, je suis prêt à relever de nouveaux défis et à produire des œuvres visuelles uniques qui marquent les esprits.</p>
-                </div>
+  const chiffres = [
+    { valeur: "120+", label: t.about_stats_projets },
+    { valeur: "50+",  label: t.about_stats_clients },
+    { valeur: "5+",   label: t.about_stats_ans },
+    { valeur: "98%",  label: t.about_stats_satis },
+  ];
+
+  return (
+    <div>
+      <NavBar />
+
+      {/* Hero */}
+      <section className="about-hero">
+        <div className="container-max">
+          <div className="about-grid" data-aos="fade-up">
+
+            <div className="about-img-wrap" data-aos="fade-right">
+              <img src="/img/about.jpg" alt="Elvis Adjegbe" className="about-img" />
             </div>
-            <Footer />
-        </>
-    )
+
+            <div data-aos="fade-left" data-aos-delay="150">
+              <div className="about-texte-tag">{traduire(t.about_label, langue)}</div>
+
+              <h1 className="about-titre">
+                {traduire(t.about_titre_rest, langue)} <em>{traduire(t.about_titre_em, langue)}</em><br />
+                {traduire(t.about_titre_qui, langue)}
+              </h1>
+
+              <p className="about-para">{traduire(t.about_para1, langue)}</p>
+              <p className="about-para">{traduire(t.about_para2, langue)}</p>
+              <p className="about-para">{traduire(t.about_para3, langue)}</p>
+
+              <div style={{ marginTop: "40px", display: "flex", gap: "16px", flexWrap: "wrap" }}>
+                <a href="/img/CvElvis.pdf" target="_blank" rel="noopener noreferrer" className="btn-gold">
+                  {traduire(t.about_btn_cv, langue)} <span>↓</span>
+                </a>
+                <a href="#contact-about" className="btn-outline">
+                  {traduire(t.about_btn_contact, langue)}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Chiffres clés */}
+      <section className="section section-alt">
+        <div className="container-max">
+          <div
+            style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1px", background: "var(--bordure-subtile)" }}
+            data-aos="fade-up"
+          >
+            {chiffres.map((item) => (
+              <div key={item.label.fr} style={{ background: "var(--noir-3)", padding: "52px 36px", textAlign: "center" }}>
+                <div style={{ fontFamily: "var(--font-titre)", fontSize: "3.5rem", color: "var(--or)", fontWeight: "700", lineHeight: "1", marginBottom: "10px" }}>
+                  {item.valeur}
+                </div>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.62rem", letterSpacing: "2px", textTransform: "uppercase", color: "var(--gris)" }}>
+                  {traduire(item.label, langue)}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Outils */}
+      <section className="section">
+        <div className="container-max">
+          <div className="section-entete" data-aos="fade-up">
+            <div className="section-label">{traduire(t.about_outils_label, langue)}</div>
+            <h2 className="section-titre">
+              {traduire(t.about_outils_titre, langue)} <em>{traduire(t.about_outils_em, langue)}</em>
+            </h2>
+          </div>
+
+          <div
+            style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0 80px" }}
+            data-aos="fade-up" data-aos-delay="150"
+          >
+            {outils.map((outil) => (
+              <div className="barre-skill" key={outil.nom}>
+                <div className="barre-skill-header">
+                  <span className="barre-skill-nom">{outil.nom}</span>
+                  <span className="barre-skill-pct">{outil.niveau}%</span>
+                </div>
+                <div className="barre-piste">
+                  <div className="barre-remplissage" data-pct={outil.niveau}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div id="contact-about"></div>
+      <Footer />
+    </div>
+  );
 }
-export default About

@@ -1,55 +1,89 @@
 "use client"
+// Footer — traduit FR/EN
 
-import Link from "next/link";
-import { FaFacebook, FaGithub, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { FcGoogle } from "react-icons/fc";
+import { useContexte } from "@/context/ThemeContext";
+import { t, traduire } from "@/context/traductions";
 
-const Footer = () => {
+function Footer() {
+  const { langue } = useContexte();
+  const annee = new Date().getFullYear();
 
-    return (
-        <footer className="text-center text-lg-start vert text-dark">
+  const liensNav = [
+    { href: "/",             cle: t.nav_accueil },
+    { href: "/about",        cle: t.nav_apropos },
+    { href: "#creations",    cle: t.nav_creations },
+    { href: "#competences",  cle: t.nav_competences },
+    { href: "#contact",      cle: t.nav_contact },
+  ];
 
-            <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom  ">
-                <div className="me-5 d-none d-lg-block">
-                    <span>Connectez-vous avec moi sur les réseaux sociaux :</span>
-                </div>
+  const services = [
+    { href: "/montagevideo", texte: { fr: "Montage Vidéo",    en: "Video Editing" } },
+    { href: "/image",        texte: { fr: "Photographie",     en: "Photography" } },
+    { href: "/affiche",      texte: { fr: "Infographie",      en: "Infographics" } },
+    { href: "/cadrage",      texte: { fr: "Cadrage",          en: "Framing" } },
+    { href: "#",             texte: { fr: "Branding & Logo",  en: "Branding & Logo" } },
+  ];
 
+  return (
+    <footer className="footer">
+      <div className="container-max">
 
+        <div className="footer-top">
 
-                <div>
-                    <Link href="https://www.facebook.com/elvis.charles.547
-" className="me-4 text-primary ">
-                        <FaFacebook className="fs-3" />
-                    </Link>
-                    <Link href=" https://x.com/ElvisAdjegbe?t=xKC8-CZRhBGWTuY-7PviuA&s=09
+          {/* Marque */}
+          <div>
+            <div className="footer-brand-nom">Elvis <em>Adjegbe</em></div>
+            <div className="footer-brand-metier">{traduire(t.foot_metier, langue)}</div>
+            <p className="footer-brand-desc">{traduire(t.foot_desc, langue)}</p>
 
-" className="me-4 text-dark">
-                        <FaSquareXTwitter className="fs-3" />
-                    </Link>
-                    <Link href="adjegbeelvis@gmail.com" className="me-4 text-reset">
-                        <FcGoogle className="fs-3" />
-                    </Link>
-                    <Link href=" https://www.instagram.com/elvisadjegbe/profilecard/?igsh=MWh5dXRiMmZ4dGlraQ==
-" className="me-4 text-danger">
-                        <FaInstagramSquare className="fs-3" />
-                    </Link>
-                    <Link href=":https://www.linkedin.com/in/elvis-adjegbe-56750b239?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " className="me-4 text-primary">
-                        <FaLinkedin className="fs-3" />
-                    </Link>
-                    
-                </div>
-
-            </section>
-
-            <div className="text-center p-4 bg-secondary text-light">
-                © 2025 Copyright:
-                <Link className="text-reset fw-bold" href="#">Elvis communication</Link>
+            <div className="footer-reseaux">
+              {/* Instagram */}
+              <a href="#" className="footer-reseau" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              {/* LinkedIn */}
+              <a href="#" className="footer-reseau" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              {/* WhatsApp */}
+              <a href="https://wa.me/message/ALVHMML7F2H6L1" className="footer-reseau" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              </a>
             </div>
+          </div>
 
-        </footer>
-    )
+          {/* Navigation */}
+          <div>
+            <div className="footer-col-titre">{traduire(t.foot_nav_titre, langue)}</div>
+            <ul className="footer-liens">
+              {liensNav.map((lien) => (
+                <li key={lien.href}><a href={lien.href}>{traduire(lien.cle, langue)}</a></li>
+              ))}
+            </ul>
+          </div>
 
+          {/* Services */}
+          <div>
+            <div className="footer-col-titre">{traduire(t.foot_services_titre, langue)}</div>
+            <ul className="footer-liens">
+              {services.map((s) => (
+                <li key={s.texte.fr}><a href={s.href}>{langue === "fr" ? s.texte.fr : s.texte.en}</a></li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+
+        <div className="footer-bas">
+          <p className="footer-copy">
+            © {annee} <span>Elvis Adjegbe</span>. {traduire(t.foot_copyright, langue)}
+          </p>
+          <p className="footer-fait">{traduire(t.foot_fait, langue)}</p>
+        </div>
+
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;

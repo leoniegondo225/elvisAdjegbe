@@ -1,58 +1,82 @@
-import { Carousel, Card } from "react-bootstrap";
-import Image from "next/image";
+"use client"
+// Commentaires — témoignages traduits
 
-const Commentaire = () => {
-  const reviews = [
+import { useContexte } from "@/context/ThemeContext";
+import { t, traduire } from "@/context/traductions";
+
+function Commentaire() {
+  const { langue } = useContexte();
+
+  const temoignages = [
     {
-      name: "Emmanuel N'guessan",
-      text: "Un service impeccable ! Je suis ravi du travail effectué. Très professionnel et à l'écoute.",
-      image: "/img/c3.jpg"
+      texte: t.temo_1_txt,
+      nom: "Marie Kouassi",
+      poste: t.temo_1_poste,
+      avatar: "/img/im1.jpg",
+      etoiles: 5,
     },
     {
-      name: "Dina la Blonde Officielle",
-      text: "Mon photographe👍. Merci beaucoup pour les travaux de la dernière fois. Nous sommes tellement satisfaits.",
-      image: "/img/c1.jpg"
+      texte: t.temo_2_txt,
+      nom: "Kofi Asante",
+      poste: t.temo_2_poste,
+      avatar: "/img/im2.jpg",
+      etoiles: 5,
     },
     {
-      name: "HK Event & Pro",
-      text: "Rendez-vous à la deuxième édition du festival Prise de Vues. Nous avons adoré la dernière fois👌.",
-      image: "/img/c2.jpg"
-    },
-    {
-      name: "Christ Josué",
-      text: "Je veux remercier mon chargé de communication, celui qui prend les photos pendant nos programmes. Merci beaucoup pour la considération pour ma personne et mon équipe.",
-      image: "/img/c4.jpg"
+      texte: t.temo_3_txt,
+      nom: "Fatou Diallo",
+      poste: t.temo_3_poste,
+      avatar: "/img/im6.jpg",
+      etoiles: 5,
     },
   ];
 
   return (
-    <section className="py-5 " data-aos="fade-up" data-aos-delay="200">
-      <div className="container">
-        <h2 className="text-center mb-4 fw-bold">Ce que disent nos clients</h2>
-        <Carousel indicators={false} interval={5000}>
-          {reviews.map((review, index) => (
-            <Carousel.Item key={index}>
-              <div className="d-flex justify-content-center">
-                <Card style={{ maxWidth: "600px" }} className="shadow border-none p-2">
-                  <Card.Body className="text-center">
-                  <Image
-                  src={review.image}
-                  alt={review.name}
-                  className="rounded-circle mb-3"
-                  width="100"
-                  height="100"
-                />
-                    <Card.Title className="fw-bold">{review.name}</Card.Title>
-                    <Card.Text className="text-muted">"{review.text}"</Card.Text>
-                  </Card.Body>
-                </Card>
+    <section className="section section-alt" id="temoignages">
+      <div className="container-max">
+
+        <div className="section-entete" data-aos="fade-up">
+          <div className="section-label">{traduire(t.temo_label, langue)}</div>
+          <h2 className="section-titre">
+            {traduire(t.temo_titre, langue)} <em>{traduire(t.temo_titre_em, langue)}</em>
+          </h2>
+          <p className="section-desc">{traduire(t.temo_desc, langue)}</p>
+        </div>
+
+        <div className="temoignages-conteneur" data-aos="fade-up" data-aos-delay="200">
+          {temoignages.map((item, i) => (
+            <div className="temoignage-carte" key={i}>
+              <div className="temoignage-etoiles">
+                {Array.from({ length: item.etoiles }).map((_, j) => (
+                  <span key={j} className="etoile">★</span>
+                ))}
               </div>
-            </Carousel.Item>
+              <div className="temoignage-guillemet">&quot;</div>
+              <p className="temoignage-texte">
+                &ldquo;{traduire(item.texte, langue)}&rdquo;
+              </p>
+              <div className="temoignage-auteur">
+                <img
+                  src={item.avatar}
+                  alt={item.nom}
+                  className="temoignage-avatar"
+                  onError={(e) => {
+                    console.log(`⚠️ Avatar manquant : ${item.nom}`);
+                    (e.target as HTMLImageElement).src = "/img/hero1.jpg";
+                  }}
+                />
+                <div>
+                  <div className="temoignage-nom">{item.nom}</div>
+                  <div className="temoignage-poste">{traduire(item.poste, langue)}</div>
+                </div>
+              </div>
+            </div>
           ))}
-        </Carousel>
+        </div>
+
       </div>
     </section>
   );
-};
+}
 
 export default Commentaire;
