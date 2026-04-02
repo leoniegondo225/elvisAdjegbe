@@ -19,6 +19,9 @@ const videos = [
   { src: "/img/vi9.mp4",  titre: { fr: "Projet Vidéo 09", en: "Video Project 09" }, desc: { fr: "Brand Film",        en: "Brand Film" } },
   { src: "/img/vi10.mp4", titre: { fr: "Projet Vidéo 10", en: "Video Project 10" }, desc: { fr: "Social Media",      en: "Social Media" } },
   { src: "/img/vi11.mp4", titre: { fr: "Projet Vidéo 11", en: "Video Project 11" }, desc: { fr: "Cinématique",       en: "Cinematic" } },
+  { src: "/img/vi12.mp4", titre: { fr: "Projet Vidéo 12", en: "Video Project 12" }, desc: { fr: "Mariage traditionnel",       en: "Traditional Wedding" } },
+  { src: "/img/vi13.mp4", titre: { fr: "Projet Vidéo 13", en: "Video Project 13" }, desc: { fr: "Shot",       en: "Shot" } },
+  { src: "/img/vi14.mp4", titre: { fr: "Projet Vidéo 14", en: "Video Project 14" }, desc: { fr: "Social Media",       en: "Social Media" } },
 ];
 
 export default function MontageVideo() {
