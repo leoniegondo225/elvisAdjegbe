@@ -54,7 +54,7 @@ export default function About() {
               <p className="about-para">{traduire(t.about_para3, langue)}</p>
 
               <div style={{ marginTop: "40px", display: "flex", gap: "16px", flexWrap: "wrap" }}>
-                <a href="/img/CvElvis.pdf" target="_blank" rel="noopener noreferrer" className="btn-gold">
+                <a href="/img/CurriculumVitaeElvis.pdf" target="_blank" rel="noopener noreferrer" className="btn-gold">
                   {traduire(t.about_btn_cv, langue)} <span>↓</span>
                 </a>
                 <a href="#contact-about" className="btn-outline">

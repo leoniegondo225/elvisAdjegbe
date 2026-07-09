@@ -101,7 +101,7 @@ function NavBar() {
 
             {/* Bouton CV */}
             <a
-              href="/img/CvElvis.pdf"
+              href="/img/CurriculumVitaeElvis.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="nav-btn-cv"
