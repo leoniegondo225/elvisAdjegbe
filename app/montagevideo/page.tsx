@@ -22,11 +22,12 @@ const videos = [
   { src: "https://drive.google.com/uc?export=download&id=1dcCZAv4wt-dX8308ZdN7qRJPPLiGoNYX", titre: { fr: "Projet Vidéo 12", en: "Video Project 12" }, desc: { fr: "Mariage traditionnel",       en: "Traditional Wedding" } },
   { src: "/img/vi13.mp4", titre: { fr: "Projet Vidéo 13", en: "Video Project 13" }, desc: { fr: "Shot",       en: "Shot" } },
   { src: "https://drive.google.com/uc?export=download&id=1GB2fLv9_uiyVvKIVmLj7xHSS_oD7sLd1", titre: { fr: "Projet Vidéo 14", en: "Video Project 14" }, desc: { fr: "Social Media",       en: "Social Media" } },
-  { src: "/img/VideoMaggi.mp4", titre: { fr: "Vidéo Maggi", en: "Maggi Video" }, desc: { fr: "Publicité",       en: "Advertisement" } },
-  { src: "/img/JNPCA2eEditionYakro.mp4", titre: { fr: "JNPCA 2e Édition Yakro", en: "JNPCA 2nd Edition Yakro" }, desc: { fr: "Événementiel",       en: "Event coverage" } },
-  { src: "/img/Annonce.mp4", titre: { fr: "Annonce", en: "Announcement" }, desc: { fr: "Spot promotionnel",       en: "Promo spot" } },
-  { src: "/img/LancementParendo.mp4", titre: { fr: "Lancement Parendo", en: "Parendo Launch" }, desc: { fr: "Événementiel",       en: "Event coverage" } },
+  { src: "https://drive.google.com/uc?export=download&id=1OMJCXnTRrsQkc6BkEKFp2osIYNbyT0qF", titre: { fr: "Vidéo Maggi", en: "Maggi Video" }, desc: { fr: "Publicité",       en: "Advertisement" } },
+  { src: "https://drive.google.com/uc?export=download&id=1EBacO_jZL41WJ4OjTV5ma8El_kubWsEq", titre: { fr: "JNPCA 2e Édition Yakro", en: "JNPCA 2nd Edition Yakro" }, desc: { fr: "Événementiel",       en: "Event coverage" } },
+  { src: "https://drive.google.com/uc?export=download&id=1SBOPKmA4wlKaidHB9DwuNVhUnT_xDA1D", titre: { fr: "Annonce", en: "Announcement" }, desc: { fr: "Spot promotionnel",       en: "Promo spot" } },
+  { src: "https://drive.google.com/uc?export=download&id=1yzqo8xKYshUALoVBHurwjVNlEY5o5uCZ", titre: { fr: "Lancement Parendo", en: "Parendo Launch" }, desc: { fr: "Événementiel",       en: "Event coverage" } },
 ];
+
 
 export default function MontageVideo() {
   const { langue } = useContexte();
